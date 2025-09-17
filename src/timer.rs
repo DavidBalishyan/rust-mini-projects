@@ -3,10 +3,7 @@ use std::thread;
 use std::time::Duration;
 
 pub fn main() {
-    println!("Enter time in seconds: ");
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).unwrap();
-
+    let input = std::env::args().nth(1).expect("no input");
     let time: u64 = input.trim().parse().unwrap_or(0);
 
     println!("Timer set for {} seconds.", time);
